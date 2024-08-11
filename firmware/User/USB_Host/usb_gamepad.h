@@ -13,5 +13,5 @@
  HID_gamepad_Info_TypeDef;
 
  HID_gamepad_Info_TypeDef *GetGamepadInfo(Interface *Itf);
- USBH_StatusTypeDef GamepadDecode(Interface *Itf);
+ USB_Status GamepadDecode(Interface *Itf);
 #endif

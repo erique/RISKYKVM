@@ -14,8 +14,8 @@ typedef struct _HID_MOUSE_Info
 }
 HID_MOUSE_Info_TypeDef;
 
-HID_MOUSE_Info_TypeDef *USBH_GetMouseInfo(Interface *Itf);
-USBH_StatusTypeDef USBH_MouseDecode(Interface *Itf);
+HID_MOUSE_Info_TypeDef *USB_GetMouseInfo(Interface *Itf);
+USB_Status USB_MouseDecode(Interface *Itf);
 
 
 #endif

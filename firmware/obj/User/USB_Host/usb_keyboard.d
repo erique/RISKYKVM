@@ -1,6 +1,5 @@
-User/main.o: ../User/main.c \
- C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_gamepad.h \
- C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_host_config.h \
+User/USB_Host/usb_keyboard.o: ../User/USB_Host/usb_keyboard.c \
+ ../User/USB_Host/usb_keyboard.h ../User/USB_Host/usb_host_config.h \
  C:\Repository\RISKYKVM\firmware\Debug/debug.h \
  C:\Repository\RISKYKVM\firmware\Peripheral\inc/ch32v20x.h \
  C:\Repository\RISKYKVM\firmware\Core/core_riscv.h \
@@ -28,21 +27,14 @@ User/main.o: ../User/main.c \
  C:\Repository\RISKYKVM\firmware\User/ch32v20x_it.h \
  C:\Repository\RISKYKVM\firmware\Peripheral\inc/ch32v20x_misc.h \
  C:\Repository\RISKYKVM\firmware\User/ch32v20x_usb.h \
- C:\Repository\RISKYKVM\firmware\User\USB_Host/ch32v20x_usbfs_host.h \
- C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_host_hid.h \
- C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_host_hub.h \
- C:\Repository\RISKYKVM\firmware\User\USB_Host/app_km.h \
- C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_hid_reportparser.h \
- C:\Repository\RISKYKVM\firmware\User/utils.h \
- C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_mouse.h \
- C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_keyboard.h \
- C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_host_config.h \
- ../User/utils.h ../User/tim.h ../User/mouse.h ../User/gpio.h \
- ../User/keyboard.h ../User/gamepad.h
+ ../User/USB_Host/ch32v20x_usbfs_host.h ../User/USB_Host/usb_host_hid.h \
+ ../User/USB_Host/usb_host_hub.h ../User/USB_Host/app_km.h \
+ ../User/USB_Host/usb_hid_reportparser.h \
+ C:\Repository\RISKYKVM\firmware\User/utils.h
 
-C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_gamepad.h:
+../User/USB_Host/usb_keyboard.h:
 
-C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_host_config.h:
+../User/USB_Host/usb_host_config.h:
 
 C:\Repository\RISKYKVM\firmware\Debug/debug.h:
 
@@ -98,32 +90,14 @@ C:\Repository\RISKYKVM\firmware\Peripheral\inc/ch32v20x_misc.h:
 
 C:\Repository\RISKYKVM\firmware\User/ch32v20x_usb.h:
 
-C:\Repository\RISKYKVM\firmware\User\USB_Host/ch32v20x_usbfs_host.h:
+../User/USB_Host/ch32v20x_usbfs_host.h:
 
-C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_host_hid.h:
+../User/USB_Host/usb_host_hid.h:
 
-C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_host_hub.h:
+../User/USB_Host/usb_host_hub.h:
 
-C:\Repository\RISKYKVM\firmware\User\USB_Host/app_km.h:
+../User/USB_Host/app_km.h:
 
-C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_hid_reportparser.h:
+../User/USB_Host/usb_hid_reportparser.h:
 
 C:\Repository\RISKYKVM\firmware\User/utils.h:
-
-C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_mouse.h:
-
-C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_keyboard.h:
-
-C:\Repository\RISKYKVM\firmware\User\USB_Host/usb_host_config.h:
-
-../User/utils.h:
-
-../User/tim.h:
-
-../User/mouse.h:
-
-../User/gpio.h:
-
-../User/keyboard.h:
-
-../User/gamepad.h:

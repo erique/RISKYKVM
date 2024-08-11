@@ -5,13 +5,9 @@
 
 typedef enum
 {
-  USBH_OK = 0,
-  USBH_BUSY,
-  USBH_FAIL,
-  USBH_NOT_SUPPORTED,
-  USBH_UNRECOVERED_ERROR,
-  USBH_ERROR_SPEED_UNKNOWN,
-} USBH_StatusTypeDef;
+  USB_OK = 0,
+  USB_FAIL,
+} USB_Status;
 
 
 

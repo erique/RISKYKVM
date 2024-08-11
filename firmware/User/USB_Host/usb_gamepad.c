@@ -30,7 +30,7 @@ static uint8_t 			gamepad_report_data[64];
 HID_gamepad_Info_TypeDef *GetGamepadInfo(Interface *Itf)
 {
 	//refresh value of joymap and return value
-	if(GamepadDecode(Itf)== USBH_OK)
+	if(GamepadDecode(Itf)== USB_OK)
 	{
 
 		return &gamepad_info;
@@ -43,13 +43,13 @@ HID_gamepad_Info_TypeDef *GetGamepadInfo(Interface *Itf)
 
 
 
-USBH_StatusTypeDef GamepadDecode(Interface *Itf)
+USB_Status GamepadDecode(Interface *Itf)
 {
 
 
 	  if (Itf->HidRptLen == 0U)
 	  {
-	    return USBH_FAIL;
+	    return USB_FAIL;
 	  }
 
 	  if (FifoRead(&Itf->buffer, &gamepad_report_data, Itf->HidRptLen) !=0)
@@ -126,12 +126,12 @@ USBH_StatusTypeDef GamepadDecode(Interface *Itf)
 				gamepad_info.gamepad_data = jmap;
 				gamepad_info.gamepad_extraBtn = btn_extra;
 
-		  return USBH_OK;
+		  return USB_OK;
 	    }
 
 
 
-	  return USBH_FAIL;
+	  return USB_FAIL;
 
 }
 

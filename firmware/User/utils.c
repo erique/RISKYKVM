@@ -48,14 +48,7 @@ uint16_t FifoRead(FIFO_Utils_TypeDef *f, void *buf, uint16_t nbytes)
   return nbytes;
 }
 
-/**
-  * @brief  USBH_HID_FifoWrite
-  *         Write To FIFO.
-  * @param  f: Fifo address
-  * @param  buf: read buffer
-  * @param  nbytes: number of item to write
-  * @retval number of written items
-  */
+
 uint16_t FifoWrite(FIFO_Utils_TypeDef *f, void *buf, uint16_t  nbytes)
 {
   uint16_t i;

@@ -5,9 +5,9 @@ HID_MOUSE_Info_TypeDef    	mouse_info;
 uint8_t                 	mouse_report_data[8];
 
 
-HID_MOUSE_Info_TypeDef *USBH_GetMouseInfo(Interface *Itf)
+HID_MOUSE_Info_TypeDef *USB_GetMouseInfo(Interface *Itf)
 {
-  if (USBH_MouseDecode(Itf) == USBH_OK)
+  if (USB_MouseDecode(Itf) == USB_OK)
   {
     return &mouse_info;
   }
@@ -20,12 +20,12 @@ HID_MOUSE_Info_TypeDef *USBH_GetMouseInfo(Interface *Itf)
 
 
 
-USBH_StatusTypeDef USBH_MouseDecode(Interface *Itf)
+USB_Status USB_MouseDecode(Interface *Itf)
 {
 
   if (Itf->HidRptLen == 0U)
   {
-    return USBH_FAIL;
+    return USB_FAIL;
   }
 
   //Clear mouse_report_data
@@ -98,7 +98,7 @@ USBH_StatusTypeDef USBH_MouseDecode(Interface *Itf)
 	  	  mouse_info.buttons[2] = (btn>>2)&0x1;
 	  	  mouse_info.wheel = wheelVal;
 	  	}
-    return USBH_OK;
+    return USB_OK;
   }
-  return   USBH_FAIL;
+  return   USB_FAIL;
 }
