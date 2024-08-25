@@ -40,7 +40,7 @@ int main( void )
 				//Handle mouse
 				if (HostCtl[0].Interface[itf].HIDRptDesc.type
 						== REPORT_TYPE_MOUSE) {
-					HID_MOUSE_Info_TypeDef *mousemap = USB_GetMouseInfo(
+				    HID_MOUSE_Data *mousemap = USB_GetMouseInfo(
 							&HostCtl[0].Interface[itf]);
 					ProcessMouse(mousemap);
 				}
@@ -58,7 +58,7 @@ int main( void )
 				if (HostCtl[0].Interface[itf].HIDRptDesc.type
 						== REPORT_TYPE_KEYBOARD) {
 					//HID_KEYBD_Info_TypeDef *USBH_HID_GetKeybdInfo(Interface *Itf)
-				    HID_Keyboard_Info_TypeDef *kbd = USBH_HID_GetKeyboardInfo(
+				    HID_Keyboard_Data *kbd = USBH_HID_GetKeyboardInfo(
 							&HostCtl[0].Interface[itf]);
 
 					amikb_process(kbd);
@@ -80,7 +80,7 @@ int main( void )
 					//Handle mouse
 					if (HostCtl[device].Interface[itf].HIDRptDesc.type
 							== REPORT_TYPE_MOUSE) {
-						HID_MOUSE_Info_TypeDef *mousemap = USB_GetMouseInfo(
+					    HID_MOUSE_Data *mousemap = USB_GetMouseInfo(
 								&HostCtl[device].Interface[itf]);
 							ProcessMouse(mousemap);
 
@@ -98,7 +98,7 @@ int main( void )
 					// Handle Keyboard
 					if (HostCtl[device].Interface[itf].HIDRptDesc.type
 							== REPORT_TYPE_KEYBOARD) {
-					    HID_Keyboard_Info_TypeDef *kbd = USBH_HID_GetKeyboardInfo(
+					    HID_Keyboard_Data *kbd = USBH_HID_GetKeyboardInfo(
 								&HostCtl[device].Interface[itf]);
 							amikb_process(kbd);
 

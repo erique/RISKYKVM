@@ -149,7 +149,7 @@ uint8_t processMouseMovement(int8_t movementUnits, uint8_t axis, int limitRate,
 	return (uint8_t) timerTopValue;
 }
 
-void ProcessMouse(HID_MOUSE_Info_TypeDef *mousemap) {
+void ProcessMouse(HID_MOUSE_Data *mousemap) {
 
 
 

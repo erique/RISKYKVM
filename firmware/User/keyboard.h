@@ -31,7 +31,7 @@ typedef enum {
 void amikb_process_irq();
 void amikb_init();
 void amikb_startup(void);
-void amikb_process(HID_Keyboard_Info_TypeDef *kbdata);
+void amikb_process(HID_Keyboard_Data *kbdata);
 void amikb_gpio_init(void);
 void amikb_ready(int isready);
 bool amikb_reset_check(void);

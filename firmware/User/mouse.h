@@ -26,7 +26,7 @@
 
 
 void InitMouse();
-void ProcessMouse(HID_MOUSE_Info_TypeDef *mousemap);
+void ProcessMouse(HID_MOUSE_Data *mousemap);
 void ProcessX_IRQ();
 void ProcessY_IRQ();
 void ProcessScrollIRQ();

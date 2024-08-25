@@ -12,9 +12,9 @@ typedef struct _HID_MOUSE_Info
   int8_t              buttons[3];
   int16_t             wheel;
 }
-HID_MOUSE_Info_TypeDef;
+HID_MOUSE_Data;
 
-HID_MOUSE_Info_TypeDef *USB_GetMouseInfo(Interface *Itf);
+HID_MOUSE_Data *USB_GetMouseInfo(Interface *Itf);
 USB_Status USB_MouseDecode(Interface *Itf);
 
 

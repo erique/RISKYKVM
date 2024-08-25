@@ -12,7 +12,7 @@ uint8_t i = 0;
 
 
 
-static HID_Keyboard_Info_TypeDef prevkeycode = {
+static HID_Keyboard_Data prevkeycode = {
 		.lctrl          = 0,
 		.lshift         = 0,
 		.lalt           = 0,
@@ -774,7 +774,7 @@ void amikb_reset(void)
 
 
 
-void amikb_process(HID_Keyboard_Info_TypeDef *kbdata)
+void amikb_process(HID_Keyboard_Data *kbdata)
 {
 
 

@@ -1,11 +1,11 @@
 #include <usb_mouse.h>
 
 
-HID_MOUSE_Info_TypeDef    	mouse_info;
+HID_MOUSE_Data          	mouse_info;
 uint8_t                 	mouse_report_data[8];
 
 
-HID_MOUSE_Info_TypeDef *USB_GetMouseInfo(Interface *Itf)
+HID_MOUSE_Data *USB_GetMouseInfo(Interface *Itf)
 {
   if (USB_MouseDecode(Itf) == USB_OK)
   {
@@ -16,9 +16,6 @@ HID_MOUSE_Info_TypeDef *USB_GetMouseInfo(Interface *Itf)
     return NULL;
   }
 }
-
-
-
 
 USB_Status USB_MouseDecode(Interface *Itf)
 {
@@ -32,7 +29,6 @@ USB_Status USB_MouseDecode(Interface *Itf)
 
   memset(&mouse_report_data,0,sizeof(mouse_report_data));
 
-
   /*Fill report */
   if (FifoRead(&Itf->buffer, &mouse_report_data, Itf->HidRptLen) !=0)
   {
@@ -43,11 +39,8 @@ USB_Status USB_MouseDecode(Interface *Itf)
 	  uint8_t i;
 	  int16_t wheelVal;
 
-
-
 	  // skip report id if present
 	  uint8_t *p = mouse_report_data + (Itf->HIDRptDesc.report_id?1:0);
-
 
 	  //process axis
 	  // two axes ...
@@ -75,8 +68,6 @@ USB_Status USB_MouseDecode(Interface *Itf)
             Itf->HIDRptDesc.joystick_mouse.wheel.logical.max;
           wheelVal = collect_bits(p, Itf->HIDRptDesc.joystick_mouse.wheel.offset,
                 Itf->HIDRptDesc.joystick_mouse.wheel.size, is_signed_wheel);
-
-
 
 	  //process mouse
 	  if(Itf->HIDRptDesc.type == REPORT_TYPE_MOUSE) {

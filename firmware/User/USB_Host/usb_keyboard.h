@@ -16,9 +16,9 @@ typedef struct
   uint8_t rgui;
   uint8_t keys[6];
 }
-HID_Keyboard_Info_TypeDef;
+HID_Keyboard_Data;
 
 
-HID_Keyboard_Info_TypeDef *USBH_HID_GetKeyboardInfo(Interface *Itf);
+HID_Keyboard_Data *USBH_HID_GetKeyboardInfo(Interface *Itf);
 
 #endif

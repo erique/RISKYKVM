@@ -9,10 +9,6 @@ typedef enum
   USB_FAIL,
 } USB_Status;
 
-
-
-
-
 typedef struct
 {
   uint8_t  *buf;
@@ -26,8 +22,6 @@ typedef struct
 void FifoInit(FIFO_Utils_TypeDef *f);
 uint16_t FifoWrite(FIFO_Utils_TypeDef *f, void *buf, uint16_t  nbytes);
 uint16_t FifoRead(FIFO_Utils_TypeDef *f, void *buf, uint16_t nbytes);
-
 uint16_t collect_bits(uint8_t *p, uint16_t offset, uint8_t size, int is_signed);
-
 
 #endif
