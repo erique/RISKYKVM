@@ -1,4 +1,3 @@
-board/RISKKVM/RISKKVM-backups/*
 firmware/obj/*
 firmware/bin/*
-
+board/RISKYKVM-backups/** 
