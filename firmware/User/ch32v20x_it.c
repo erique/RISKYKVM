@@ -15,7 +15,7 @@
 
 void NMI_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
 void HardFault_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
-void EXTI1_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
+void EXTI15_10_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
 /*********************************************************************
  * @fn      NMI_Handler
  *
@@ -41,7 +41,8 @@ void HardFault_Handler(void)
   }
 }
 
-void EXTI1_IRQHandler(void)
+
+void EXTI15_10_IRQHandler(void)
 {
     if(EXTI_GetITStatus(EXTI_Line1) != RESET)
     {
