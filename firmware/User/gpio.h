@@ -20,8 +20,12 @@
 #define RHQ_GPIO_Port GPIOB
 #define LVQ_Pin GPIO_Pin_13
 #define LVQ_GPIO_Port GPIOB
+
+
+
 #define BH_Pin GPIO_Pin_14
 #define BH_GPIO_Port GPIOB
+
 #define FV_Pin GPIO_Pin_8
 #define FV_GPIO_Port GPIOA
 

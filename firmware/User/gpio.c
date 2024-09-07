@@ -87,27 +87,27 @@ void GPIO_Config()
 
     //MOUSE PIN 5 - MMB setup for Scroll support
     //On this PCB it is Port B Pin 10
-    EXTI_InitTypeDef EXTI_InitStructure = {0};
-    NVIC_InitTypeDef NVIC_InitStructure = {0};
+	EXTI_InitTypeDef EXTI_InitStructure = {0};
+	NVIC_InitTypeDef NVIC_InitStructure = {0};
 
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
 
-    GPIO_InitStructure.GPIO_Pin = MB_Pin;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
-    GPIO_Init(MB_GPIO_Port, &GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_Pin = MB_Pin;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+	GPIO_Init(MB_GPIO_Port, &GPIO_InitStructure);
 
 
-    GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource2);
-    EXTI_InitStructure.EXTI_Line = EXTI_Line10;
-    EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
-    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-    EXTI_Init(&EXTI_InitStructure);
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource10);
+	EXTI_InitStructure.EXTI_Line = EXTI_Line10;
+	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+	EXTI_Init(&EXTI_InitStructure);
 
-    NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-    NVIC_Init(&NVIC_InitStructure);
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
 }

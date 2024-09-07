@@ -44,10 +44,10 @@ void HardFault_Handler(void)
 
 void EXTI15_10_IRQHandler(void)
 {
-    if(EXTI_GetITStatus(EXTI_Line1) != RESET)
+    if(EXTI_GetITStatus(EXTI_Line10) != RESET)
     {
         ProcessScrollIRQ();
-        EXTI_ClearITPendingBit(EXTI_Line1); /* Clear Flag */
+        EXTI_ClearITPendingBit(EXTI_Line10); /* Clear Flag */
     }
 }
 

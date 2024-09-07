@@ -282,16 +282,16 @@ void ProcessY_IRQ() {
 		// Set the output pins according to the current phase
 		if (mouseEncoderPhaseY == 3)
 		{
-			GPIO_WriteBit(FV_GPIO_Port, LVQ_Pin, !(0));	// Set Y1 to 0
+			GPIO_WriteBit(LVQ_GPIO_Port, LVQ_Pin, !(0));	// Set Y1 to 0
 		}
 		if (mouseEncoderPhaseY == 2)
-			GPIO_WriteBit(LVQ_GPIO_Port, FV_Pin, !(0));	// Set Y2 to 0
+			GPIO_WriteBit(FV_GPIO_Port, FV_Pin, !(0));	// Set Y2 to 0
 		if (mouseEncoderPhaseY == 1)
 		{
-			GPIO_WriteBit(FV_GPIO_Port, LVQ_Pin, !(1));	// Set Y1 to 1
+			GPIO_WriteBit(LVQ_GPIO_Port, LVQ_Pin, !(1));	// Set Y1 to 1
 		}
 			if (mouseEncoderPhaseY == 0)
-			GPIO_WriteBit(LVQ_GPIO_Port, FV_Pin, !(1));	// Set Y2 to 1
+			GPIO_WriteBit(FV_GPIO_Port, FV_Pin, !(1));	// Set Y2 to 1
 
 		// Change phase
 		if (mouseDirectionY == 0)
@@ -326,7 +326,8 @@ void ProcessY_IRQ() {
 void ProcessScrollIRQ()
 {
     uint8_t code = 0;
-    uint16_t PortCurrentValue = GPIO_ReadOutputData(GPIOA);
+    uint16_t PortCurrentValueGPIOA = GPIO_ReadOutputData(GPIOA);
+    uint16_t PortCurrentValueGPIOB = GPIO_ReadOutputData(GPIOB);
 
     FifoRead(&ScrollBuffer, &code, 1);
 
@@ -374,7 +375,8 @@ void ProcessScrollIRQ()
     }
 
    while (GPIO_ReadInputDataBit(MB_GPIO_Port, MB_Pin) != 1);
-   GPIO_Write(GPIOA,PortCurrentValue);
+   GPIO_Write(GPIOA,PortCurrentValueGPIOA);
+   GPIO_Write(GPIOB,PortCurrentValueGPIOB);
 }
 
 
