@@ -255,7 +255,7 @@ static HID_Keyboard_Data prevkeycode = {
 #define KEY_RIGHTALT                           0xE6
 #define KEY_RIGHT_GUI                          0xE7
 
-#define KEYCODE_TAB_SIZE      0x70 /* da 0x00 a 0x6F */
+#define KEYCODE_TAB_SIZE      0x72 /* da 0x00 a 0x6F */
 
 static const uint8_t scancodeamiga[KEYCODE_TAB_SIZE][2] =
 {
@@ -277,6 +277,7 @@ static const uint8_t scancodeamiga[KEYCODE_TAB_SIZE][2] =
 	{KEY_MINUS_UNDERSCORE,       0x0B }, // -_
 	{KEY_EQUAL_PLUS,             0x0C }, // +=
 	{KEY_BACKSLASH_VERTICAL_BAR, 0x0D }, // |
+	{KEY_NONUS_BACK_SLASH_VERTICAL_BAR, 0x0D},
 	{KEY_KEYPAD_0_INSERT,        0x0F }, // NUM 0
 	{KEY_Q,                      0x10 }, // Q
 	{KEY_W,                      0x11 }, // W
@@ -345,6 +346,8 @@ static const uint8_t scancodeamiga[KEYCODE_TAB_SIZE][2] =
 	{KEY_F8,                     0x57 }, // F8
 	{KEY_F9,                     0x58 }, // F9
 	{KEY_F10,                    0x59 }, // F10
+	{KEY_HOME,		             0x5A }, // (
+	{KEY_END1,        			 0x5B }, // )
 	{KEY_KEYPAD_SLASH,           0x5C }, // /
 	{KEY_KEYPAD_ASTERIKS,        0x5D }, // NUM *
 	{KEY_KEYPAD_PLUS,            0x5E }, // NUM +
@@ -357,16 +360,17 @@ static const uint8_t scancodeamiga[KEYCODE_TAB_SIZE][2] =
 	{KEY_RIGHTALT,               0x65 }, // RALT
 	{KEY_LEFT_GUI,               0x66 }, // LWIN
 	{KEY_RIGHT_GUI,              0x67 }, // RWIN
+	{KEY_RIGHTCONTROL,           0x67 }, // RWIN
 	{KEY_APPLICATION,            0x5F }, // APP - HELP
 	{KEY_KEYPAD_DECIMAL_SEPARATOR_DELETE, 0x3C }, // KEYPAD '.'
 	{KEY_KEYPAD_NUM_LOCK_AND_CLEAR, 0x68 }, // NUMLOCK & CLEAR
 	{KEY_PRINTSCREEN,            0x0E }, // SPARE
 	{KEY_SCROLL_LOCK,            0x1C }, // SPARE
 	{KEY_PAUSE,                  0x2C }, // SPARE
-	{KEY_HOME,                   0x3B }, // SPARE
+	//{KEY_HOME,                   0x3B }, // SPARE
 	{KEY_PAGEUP,                 0x3F }, // PGUP
 	{KEY_PAGEDOWN,               0x1F }, // PGDOWN
-	{KEY_END1,                   0x49 }, // SPARE
+	//{KEY_END1,                   0x49 }, // SPARE
 	{KEY_INSERT,                 0x4B }, // SPARE
 	{KEY_NONE,                   0x5B }, // SPARE
 	{KEY_NONE,                   0x6A }, // SPARE
