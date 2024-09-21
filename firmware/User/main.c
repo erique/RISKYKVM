@@ -11,10 +11,8 @@
 
 int main( void )
 {
-    USART_Printf_Init( 115200 );
+   // USART_Printf_Init( 115200 );
     DUG_PRINTF( "SystemClk:%d\r\n", SystemCoreClock );
-
-
     Delay_Init( );
     TIM3_Init( 9, SystemCoreClock / 10000 - 1 );
 
@@ -32,7 +30,6 @@ int main( void )
 
 	while (1) {
 		USBH_MainDeal();
-
 		//Handle HID Device
 		if (RootHubDev.bType == USB_DEV_CLASS_HID) {
 
