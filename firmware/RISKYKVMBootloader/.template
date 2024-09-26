@@ -1,0 +1,14 @@
+
+MCU=RISKYKVMBootloader
+Mcu Type=
+Address=
+Erase All=
+Program=
+Verify=
+Reset=
+Vendor=
+Link=WCH-Link
+Toolchain=
+Series=
+Description=
+Target Path=obj/RISKYKVMBoot.hex
