@@ -32,3 +32,6 @@ To program bootloader or standard version of firmware use MounRiver IDE.
 3. If flashing is sucessful RDY LED will start slowly flashing 10x, if process failes then RDY flash either will be off, or will start flashing quickly 100x.
 4. Power off device, remove jumper or disconnect CLK and DIO pins.
 5. Device is ready to use.
+
+
+![1000067798](https://github.com/user-attachments/assets/acc53fcd-7055-4795-9255-ddba85fc8c38)
