@@ -765,10 +765,24 @@ void amikb_reset(void)
 
     GPIO_WriteBit(KB_RESET_GPIO_Port, KB_RESET_GPIO_Pin, Bit_SET);
 
+
+    GPIO_WriteBit(KBD_CLOCK_GPIO_Port, KBD_CLOCK_Pin, Bit_RESET);
+    Delay_Ms(500);
+    GPIO_WriteBit(KBD_CLOCK_GPIO_Port, KBD_CLOCK_Pin, Bit_SET);
+
     prev_keycode = 0xff;
 	capslk = 0;
 	numlk = 0;
 	scrolllk = 0;
+}
+
+void amikb_irq(void)
+{
+    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_RESET);
+    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_RESET);
+    Delay_Ms(10);
+    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_SET);
+    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_SET);
 }
 
 // ****************************
@@ -788,6 +802,10 @@ void amikb_process(HID_Keyboard_Data *kbdata)
 	int j;
 	led_status_t rval = NO_LED; /* 0 means no USB interaction such as leds, ... */
 
+	if(kbdata->keys[0] == KEY_F12)
+	{
+	    amikb_irq();
+	}
 
 	//check for reset
 	if(kbdata->lctrl == 1 && kbdata->lalt ==1 &&kbdata->keys[0]==KEY_DELETE  )
