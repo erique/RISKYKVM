@@ -256,6 +256,7 @@ static HID_Keyboard_Data prevkeycode = {
 #define KEY_RIGHT_GUI                          0xE7
 
 #define KEYCODE_TAB_SIZE      0x72 /* da 0x00 a 0x6F */
+#define OK_RESET    3 /* 3 special keys to have a KBRESET */
 
 static const uint8_t scancodeamiga[KEYCODE_TAB_SIZE][2] =
 {
@@ -787,7 +788,7 @@ void amikb_irq(void)
 
 // ****************************
 
-#define OK_RESET	3 /* 3 special keys to have a KBRESET */
+
 
 
 
@@ -805,13 +806,27 @@ void amikb_process(HID_Keyboard_Data *kbdata)
 	if(kbdata->keys[0] == KEY_F12)
 	{
 	    amikb_irq();
+	    return;
 	}
 
 	//check for reset
 	if(kbdata->lctrl == 1 && kbdata->lalt ==1 &&kbdata->keys[0]==KEY_DELETE  )
 	{
 		amikb_reset();
+		return;
 	}
+
+    if(kbdata->lgui == 1 && kbdata->rgui ==1 &&kbdata->rctrl )
+    {
+        amikb_reset();
+        return;
+    }
+
+    if(kbdata->lgui == 1 && kbdata->rgui ==1 &&kbdata->lctrl )
+    {
+        amikb_reset();
+        return;
+    }
 
 	// ----------------------------------------------- LEFT
 
@@ -946,6 +961,3 @@ void amikb_process(HID_Keyboard_Data *kbdata)
 		}
 
 }
-
-
-

@@ -69,18 +69,18 @@ void GPIO_Config()
 
 
     GPIO_InitStructure.GPIO_Pin = KBD_CLOCK_Pin ;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
     GPIO_InitStructure.GPIO_Mode =
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;;
     GPIO_Init(KBD_CLOCK_GPIO_Port, &GPIO_InitStructure);
 
     GPIO_InitStructure.GPIO_Pin = KBD_DATA_Pin;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;;
     GPIO_Init(KBD_DATA_GPIO_Port, &GPIO_InitStructure);
 
     GPIO_InitStructure.GPIO_Pin = KB_RESET_GPIO_Pin ;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;;
     GPIO_Init(KB_RESET_GPIO_Port, &GPIO_InitStructure);
 
