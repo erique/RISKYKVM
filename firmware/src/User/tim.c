@@ -4,6 +4,28 @@
 void TIM2_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
 void TIM4_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
 
+void TIM1_Init( void )
+{
+
+
+    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure = { 0 };
+
+    /* Enable Timer1 Clock */
+    RCC_APB2PeriphClockCmd( RCC_APB2Periph_TIM1, ENABLE );
+
+    /* Initialize Timer1 */
+    TIM_TimeBaseStructure.TIM_Period = 65535;
+    TIM_TimeBaseStructure.TIM_Prescaler = 65535;
+    TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
+    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+    TIM_TimeBaseInit( TIM1, &TIM_TimeBaseStructure );
+
+    TIM_Cmd( TIM1, ENABLE );
+
+
+
+
+}
 
 void TIM2_Init( void )
 {

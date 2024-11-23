@@ -2,7 +2,10 @@
 
 void GPIO_Config()
 {
-    //RCC_APB2Periph_GPIOA
+
+    //Reset RCC
+    GPIO_DeInit(GPIOA);
+
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
@@ -23,8 +26,8 @@ void GPIO_Config()
     GPIO_WriteBit(KBD_CLOCK_GPIO_Port, KBD_CLOCK_Pin,Bit_SET);
     GPIO_WriteBit(KB_RESET_GPIO_Port,KB_RESET_GPIO_Pin,Bit_SET);
 
-    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_SET);
-    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_SET);
+    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_RESET);
+    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_RESET);
 
 
 

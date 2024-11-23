@@ -759,17 +759,11 @@ static led_status_t amikb_send(uint8_t keycode, int press)
 // **************************
 void amikb_reset(void)
 {
-    int8_t var;
-    for (var = 0; var < 10; ++var) {
-        GPIO_WriteBit(KB_RESET_GPIO_Port, KB_RESET_GPIO_Pin, Bit_RESET);
-    }
-
-    GPIO_WriteBit(KB_RESET_GPIO_Port, KB_RESET_GPIO_Pin, Bit_SET);
-
-
+    GPIO_WriteBit(KB_RESET_GPIO_Port, KB_RESET_GPIO_Pin, Bit_RESET);
     GPIO_WriteBit(KBD_CLOCK_GPIO_Port, KBD_CLOCK_Pin, Bit_RESET);
     Delay_Ms(500);
     GPIO_WriteBit(KBD_CLOCK_GPIO_Port, KBD_CLOCK_Pin, Bit_SET);
+    GPIO_WriteBit(KB_RESET_GPIO_Port, KB_RESET_GPIO_Pin, Bit_SET);
 
     prev_keycode = 0xff;
 	capslk = 0;
@@ -779,11 +773,8 @@ void amikb_reset(void)
 
 void amikb_irq(void)
 {
-    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_RESET);
-    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_RESET);
-    Delay_Ms(10);
-    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_SET);
-    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_SET);
+
+
 }
 
 // ****************************
@@ -805,7 +796,13 @@ void amikb_process(HID_Keyboard_Data *kbdata)
 
 	if(kbdata->keys[0] == KEY_F12)
 	{
-	    amikb_irq();
+	    GPIO_WriteBit(LED_GPIO_Port, LED_Pin, RESET);
+	    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_RESET);
+	    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_RESET);
+	    Delay_Ms(500);
+	    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_SET);
+	    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_SET);
+	    GPIO_WriteBit(LED_GPIO_Port, LED_Pin, SET);
 	    return;
 	}
 

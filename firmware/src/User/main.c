@@ -9,6 +9,19 @@
 #include "keyboard.h"
 #include "gamepad.h"
 
+
+
+void IWDG_Feed_Init(u16 prer, u16 rlr)
+{
+    IWDG_WriteAccessCmd(IWDG_WriteAccess_Enable);
+    IWDG_SetPrescaler(prer);
+    IWDG_SetReload(rlr);
+    IWDG_ReloadCounter();
+    IWDG_Enable();
+}
+
+
+
 int main( void )
 {
    // USART_Printf_Init( 115200 );
@@ -22,13 +35,15 @@ int main( void )
     memset( &RootHubDev.bStatus, 0, sizeof( ROOT_HUB_DEVICE ) );
     memset( &HostCtl[ DEF_USBFS_PORT_INDEX * DEF_ONE_USB_SUP_DEV_TOTAL ].InterfaceNum, 0, DEF_ONE_USB_SUP_DEV_TOTAL * sizeof( HOST_CTL ) );
 #endif
-
+    TIM1_Init();
     TIM2_Init();
     TIM4_Init();
     GPIO_Config();
     InitMouse();
+    IWDG_Feed_Init( IWDG_Prescaler_32, 4000 );
 
 	while (1) {
+	    IWDG_ReloadCounter();
 		USBH_MainDeal();
 		//Handle HID Device
 		if (RootHubDev.bType == USB_DEV_CLASS_HID) {

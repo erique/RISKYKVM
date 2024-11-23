@@ -54,7 +54,7 @@ all: RISKYKVM.elf secondary-outputs
 
 # Tool invocations
 RISKYKVM.elf: $(OBJS) $(USER_OBJS)
-	@	@	riscv-none-embed-gcc -march=rv32imac -mabi=ilp32 -msmall-data-limit=8 -mno-save-restore -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized  -g3 -T "C:\Repository\RISKYKVM\firmware\RISKYKVM\Ld\Link.ld" -nostartfiles -Xlinker --gc-sections -L"../" -Wl,-Map,"RISKYKVM.map" --specs=nano.specs --specs=nosys.specs -o "RISKYKVM.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	@	@	riscv-none-embed-gcc -march=rv32imac -mabi=ilp32 -msmall-data-limit=8 -mno-save-restore -O3 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized -T "C:\Repository\RISKYKVM\firmware\RISKYKVM\Ld\Link.ld" -nostartfiles -Xlinker --gc-sections -L"../" -Wl,-Map,"RISKYKVM.map" --specs=nano.specs --specs=nosys.specs -o "RISKYKVM.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@	@
 RISKYKVM.hex: RISKYKVM.elf
 	@	riscv-none-embed-objcopy -O ihex "RISKYKVM.elf"  "RISKYKVM.hex"

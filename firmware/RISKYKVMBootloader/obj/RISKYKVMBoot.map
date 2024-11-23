@@ -87,9 +87,9 @@ Discarded input sections
  .text.amikb_ready
                 0x0000000000000000        0x2 ./User/keyboard.o
  .text.amikb_reset
-                0x0000000000000000       0x98 ./User/keyboard.o
+                0x0000000000000000       0x84 ./User/keyboard.o
  .text.amikb_irq
-                0x0000000000000000       0x5a ./User/keyboard.o
+                0x0000000000000000        0x2 ./User/keyboard.o
  .sdata.processFlag
                 0x0000000000000000        0x1 ./User/keyboard.o
  COMMON         0x0000000000000000        0x1 ./User/keyboard.o
@@ -485,8 +485,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Peripheral/src/ch32v20x_gpio.o
  .data          0x0000000000000000        0x0 ./Peripheral/src/ch32v20x_gpio.o
  .bss           0x0000000000000000        0x0 ./Peripheral/src/ch32v20x_gpio.o
- .text.GPIO_DeInit
-                0x0000000000000000       0xca ./Peripheral/src/ch32v20x_gpio.o
  .text.GPIO_AFIODeInit
                 0x0000000000000000       0x20 ./Peripheral/src/ch32v20x_gpio.o
  .text.GPIO_StructInit
@@ -590,28 +588,8 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Peripheral/src/ch32v20x_iwdg.o
  .data          0x0000000000000000        0x0 ./Peripheral/src/ch32v20x_iwdg.o
  .bss           0x0000000000000000        0x0 ./Peripheral/src/ch32v20x_iwdg.o
- .text.IWDG_WriteAccessCmd
-                0x0000000000000000        0x8 ./Peripheral/src/ch32v20x_iwdg.o
- .text.IWDG_SetPrescaler
-                0x0000000000000000        0x8 ./Peripheral/src/ch32v20x_iwdg.o
- .text.IWDG_SetReload
-                0x0000000000000000        0x8 ./Peripheral/src/ch32v20x_iwdg.o
- .text.IWDG_ReloadCounter
-                0x0000000000000000        0xe ./Peripheral/src/ch32v20x_iwdg.o
- .text.IWDG_Enable
-                0x0000000000000000        0xe ./Peripheral/src/ch32v20x_iwdg.o
  .text.IWDG_GetFlagStatus
                 0x0000000000000000        0xe ./Peripheral/src/ch32v20x_iwdg.o
- .debug_info    0x0000000000000000      0xab4 ./Peripheral/src/ch32v20x_iwdg.o
- .debug_abbrev  0x0000000000000000      0x282 ./Peripheral/src/ch32v20x_iwdg.o
- .debug_loc     0x0000000000000000       0x68 ./Peripheral/src/ch32v20x_iwdg.o
- .debug_aranges
-                0x0000000000000000       0x48 ./Peripheral/src/ch32v20x_iwdg.o
- .debug_ranges  0x0000000000000000       0x38 ./Peripheral/src/ch32v20x_iwdg.o
- .debug_line    0x0000000000000000      0x3a0 ./Peripheral/src/ch32v20x_iwdg.o
- .debug_str     0x0000000000000000      0x6b3 ./Peripheral/src/ch32v20x_iwdg.o
- .comment       0x0000000000000000       0x34 ./Peripheral/src/ch32v20x_iwdg.o
- .debug_frame   0x0000000000000000       0x70 ./Peripheral/src/ch32v20x_iwdg.o
  .text          0x0000000000000000        0x0 ./Peripheral/src/ch32v20x_misc.o
  .data          0x0000000000000000        0x0 ./Peripheral/src/ch32v20x_misc.o
  .bss           0x0000000000000000        0x0 ./Peripheral/src/ch32v20x_misc.o
@@ -719,8 +697,6 @@ Discarded input sections
                 0x0000000000000000       0x20 ./Peripheral/src/ch32v20x_rcc.o
  .text.RCC_GetClocksFreq
                 0x0000000000000000       0xd4 ./Peripheral/src/ch32v20x_rcc.o
- .text.RCC_APB2PeriphResetCmd
-                0x0000000000000000       0x1e ./Peripheral/src/ch32v20x_rcc.o
  .text.RCC_APB1PeriphResetCmd
                 0x0000000000000000       0x1e ./Peripheral/src/ch32v20x_rcc.o
  .text.RCC_BackupResetCmd
@@ -1259,7 +1235,7 @@ END GROUP
                 0x0000000000008140                . = ALIGN (0x40)
  *fill*         0x0000000000008134        0xc 
 
-.text           0x0000000000008140     0x5958
+.text           0x0000000000008140     0x5adc
                 0x0000000000008140                . = ALIGN (0x4)
  *(.text)
  .text          0x0000000000008140       0xa8 c:/mounriver/mounriver_studio/toolchain/risc-v embedded gcc/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32\libg_nano.a(lib_a-memset.o)
@@ -1400,284 +1376,311 @@ END GROUP
                 0x000000000000b422       0xa2 ./User/gamepad.o
                 0x000000000000b422                ProcessGamepad
  .text.GPIO_Config
-                0x000000000000b4c4      0x23a ./User/gpio.o
+                0x000000000000b4c4      0x242 ./User/gpio.o
                 0x000000000000b4c4                GPIO_Config
  .text.amikb_send
-                0x000000000000b6fe      0x1c2 ./User/keyboard.o
+                0x000000000000b706      0x1c2 ./User/keyboard.o
  .text.amikb_process
-                0x000000000000b8c0      0x6e8 ./User/keyboard.o
-                0x000000000000b8c0                amikb_process
+                0x000000000000b8c8      0x6b4 ./User/keyboard.o
+                0x000000000000b8c8                amikb_process
+ .text.IWDG_Feed_Init
+                0x000000000000bf7c       0x34 ./User/main.o
+                0x000000000000bf7c                IWDG_Feed_Init
  .text.startup.main
-                0x000000000000bfa8      0x38e ./User/main.o
-                0x000000000000bfa8                main
+                0x000000000000bfb0      0x3a2 ./User/main.o
+                0x000000000000bfb0                main
  .text.InitMouse
-                0x000000000000c336        0xc ./User/mouse.o
-                0x000000000000c336                InitMouse
+                0x000000000000c352        0xc ./User/mouse.o
+                0x000000000000c352                InitMouse
  .text.ProcessMouse
-                0x000000000000c342      0x2da ./User/mouse.o
-                0x000000000000c342                ProcessMouse
+                0x000000000000c35e      0x2da ./User/mouse.o
+                0x000000000000c35e                ProcessMouse
  .text.ProcessX_IRQ
-                0x000000000000c61c      0x18a ./User/mouse.o
-                0x000000000000c61c                ProcessX_IRQ
+                0x000000000000c638      0x18a ./User/mouse.o
+                0x000000000000c638                ProcessX_IRQ
  .text.ProcessY_IRQ
-                0x000000000000c7a6      0x18e ./User/mouse.o
-                0x000000000000c7a6                ProcessY_IRQ
+                0x000000000000c7c2      0x18e ./User/mouse.o
+                0x000000000000c7c2                ProcessY_IRQ
  .text.ProcessScrollIRQ
-                0x000000000000c934      0x1d8 ./User/mouse.o
-                0x000000000000c934                ProcessScrollIRQ
+                0x000000000000c950      0x220 ./User/mouse.o
+                0x000000000000c950                ProcessScrollIRQ
  .text.SystemInit
-                0x000000000000cb0c       0xac ./User/system_ch32v20x.o
-                0x000000000000cb0c                SystemInit
+                0x000000000000cb70       0xac ./User/system_ch32v20x.o
+                0x000000000000cb70                SystemInit
+ .text.TIM1_Init
+                0x000000000000cc1c       0x42 ./User/tim.o
+                0x000000000000cc1c                TIM1_Init
  .text.TIM2_Init
-                0x000000000000cbb8       0x6e ./User/tim.o
-                0x000000000000cbb8                TIM2_Init
+                0x000000000000cc5e       0x6e ./User/tim.o
+                0x000000000000cc5e                TIM2_Init
  .text.TIM4_Init
-                0x000000000000cc26       0x76 ./User/tim.o
-                0x000000000000cc26                TIM4_Init
+                0x000000000000cccc       0x76 ./User/tim.o
+                0x000000000000cccc                TIM4_Init
  .text.TIM2_IRQHandler
-                0x000000000000cc9c       0x22 ./User/tim.o
-                0x000000000000cc9c                TIM2_IRQHandler
+                0x000000000000cd42       0x22 ./User/tim.o
+                0x000000000000cd42                TIM2_IRQHandler
  .text.TIM4_IRQHandler
-                0x000000000000ccbe       0x32 ./User/tim.o
-                0x000000000000ccbe                TIM4_IRQHandler
+                0x000000000000cd64       0x32 ./User/tim.o
+                0x000000000000cd64                TIM4_IRQHandler
  .text.FifoInit
-                0x000000000000ccf0       0x18 ./User/utils.o
-                0x000000000000ccf0                FifoInit
+                0x000000000000cd96       0x18 ./User/utils.o
+                0x000000000000cd96                FifoInit
  .text.FifoRead
-                0x000000000000cd08       0x6a ./User/utils.o
-                0x000000000000cd08                FifoRead
+                0x000000000000cdae       0x6a ./User/utils.o
+                0x000000000000cdae                FifoRead
  .text.FifoWrite
-                0x000000000000cd72       0x86 ./User/utils.o
-                0x000000000000cd72                FifoWrite
+                0x000000000000ce18       0x86 ./User/utils.o
+                0x000000000000ce18                FifoWrite
  .text.collect_bits
-                0x000000000000cdf8       0xd6 ./User/utils.o
-                0x000000000000cdf8                collect_bits
+                0x000000000000ce9e       0xd6 ./User/utils.o
+                0x000000000000ce9e                collect_bits
  .text.vector_handler
-                0x000000000000cece       0x6c ./Startup/startup_ch32v20x_D6.o
-                0x000000000000ced2                Ecall_M_Mode_Handler
-                0x000000000000ced4                Ecall_U_Mode_Handler
-                0x000000000000ced6                Break_Point_Handler
-                0x000000000000ced8                SysTick_Handler
-                0x000000000000ceda                SW_Handler
-                0x000000000000cedc                WWDG_IRQHandler
-                0x000000000000cede                PVD_IRQHandler
-                0x000000000000cee0                TAMPER_IRQHandler
-                0x000000000000cee2                RTC_IRQHandler
-                0x000000000000cee4                FLASH_IRQHandler
-                0x000000000000cee6                RCC_IRQHandler
-                0x000000000000cee8                EXTI0_IRQHandler
-                0x000000000000ceea                EXTI1_IRQHandler
-                0x000000000000ceec                EXTI2_IRQHandler
-                0x000000000000ceee                EXTI3_IRQHandler
-                0x000000000000cef0                EXTI4_IRQHandler
-                0x000000000000cef2                DMA1_Channel1_IRQHandler
-                0x000000000000cef4                DMA1_Channel2_IRQHandler
-                0x000000000000cef6                DMA1_Channel3_IRQHandler
-                0x000000000000cef8                DMA1_Channel4_IRQHandler
-                0x000000000000cefa                DMA1_Channel5_IRQHandler
-                0x000000000000cefc                DMA1_Channel6_IRQHandler
-                0x000000000000cefe                DMA1_Channel7_IRQHandler
-                0x000000000000cf00                ADC1_2_IRQHandler
-                0x000000000000cf02                USB_HP_CAN1_TX_IRQHandler
-                0x000000000000cf04                USB_LP_CAN1_RX0_IRQHandler
-                0x000000000000cf06                CAN1_RX1_IRQHandler
-                0x000000000000cf08                CAN1_SCE_IRQHandler
-                0x000000000000cf0a                EXTI9_5_IRQHandler
-                0x000000000000cf0c                TIM1_BRK_IRQHandler
-                0x000000000000cf0e                TIM1_UP_IRQHandler
-                0x000000000000cf10                TIM1_TRG_COM_IRQHandler
-                0x000000000000cf12                TIM1_CC_IRQHandler
-                0x000000000000cf1a                I2C1_EV_IRQHandler
-                0x000000000000cf1c                I2C1_ER_IRQHandler
-                0x000000000000cf1e                I2C2_EV_IRQHandler
-                0x000000000000cf20                I2C2_ER_IRQHandler
-                0x000000000000cf22                SPI1_IRQHandler
-                0x000000000000cf24                SPI2_IRQHandler
-                0x000000000000cf26                USART1_IRQHandler
-                0x000000000000cf28                USART2_IRQHandler
-                0x000000000000cf2a                USART3_IRQHandler
-                0x000000000000cf2e                RTCAlarm_IRQHandler
-                0x000000000000cf30                USBWakeUp_IRQHandler
-                0x000000000000cf32                USBHD_IRQHandler
-                0x000000000000cf34                USBHDWakeUp_IRQHandler
-                0x000000000000cf36                UART4_IRQHandler
-                0x000000000000cf38                DMA1_Channel8_IRQHandler
+                0x000000000000cf74       0x6c ./Startup/startup_ch32v20x_D6.o
+                0x000000000000cf78                Ecall_M_Mode_Handler
+                0x000000000000cf7a                Ecall_U_Mode_Handler
+                0x000000000000cf7c                Break_Point_Handler
+                0x000000000000cf7e                SysTick_Handler
+                0x000000000000cf80                SW_Handler
+                0x000000000000cf82                WWDG_IRQHandler
+                0x000000000000cf84                PVD_IRQHandler
+                0x000000000000cf86                TAMPER_IRQHandler
+                0x000000000000cf88                RTC_IRQHandler
+                0x000000000000cf8a                FLASH_IRQHandler
+                0x000000000000cf8c                RCC_IRQHandler
+                0x000000000000cf8e                EXTI0_IRQHandler
+                0x000000000000cf90                EXTI1_IRQHandler
+                0x000000000000cf92                EXTI2_IRQHandler
+                0x000000000000cf94                EXTI3_IRQHandler
+                0x000000000000cf96                EXTI4_IRQHandler
+                0x000000000000cf98                DMA1_Channel1_IRQHandler
+                0x000000000000cf9a                DMA1_Channel2_IRQHandler
+                0x000000000000cf9c                DMA1_Channel3_IRQHandler
+                0x000000000000cf9e                DMA1_Channel4_IRQHandler
+                0x000000000000cfa0                DMA1_Channel5_IRQHandler
+                0x000000000000cfa2                DMA1_Channel6_IRQHandler
+                0x000000000000cfa4                DMA1_Channel7_IRQHandler
+                0x000000000000cfa6                ADC1_2_IRQHandler
+                0x000000000000cfa8                USB_HP_CAN1_TX_IRQHandler
+                0x000000000000cfaa                USB_LP_CAN1_RX0_IRQHandler
+                0x000000000000cfac                CAN1_RX1_IRQHandler
+                0x000000000000cfae                CAN1_SCE_IRQHandler
+                0x000000000000cfb0                EXTI9_5_IRQHandler
+                0x000000000000cfb2                TIM1_BRK_IRQHandler
+                0x000000000000cfb4                TIM1_UP_IRQHandler
+                0x000000000000cfb6                TIM1_TRG_COM_IRQHandler
+                0x000000000000cfb8                TIM1_CC_IRQHandler
+                0x000000000000cfc0                I2C1_EV_IRQHandler
+                0x000000000000cfc2                I2C1_ER_IRQHandler
+                0x000000000000cfc4                I2C2_EV_IRQHandler
+                0x000000000000cfc6                I2C2_ER_IRQHandler
+                0x000000000000cfc8                SPI1_IRQHandler
+                0x000000000000cfca                SPI2_IRQHandler
+                0x000000000000cfcc                USART1_IRQHandler
+                0x000000000000cfce                USART2_IRQHandler
+                0x000000000000cfd0                USART3_IRQHandler
+                0x000000000000cfd4                RTCAlarm_IRQHandler
+                0x000000000000cfd6                USBWakeUp_IRQHandler
+                0x000000000000cfd8                USBHD_IRQHandler
+                0x000000000000cfda                USBHDWakeUp_IRQHandler
+                0x000000000000cfdc                UART4_IRQHandler
+                0x000000000000cfde                DMA1_Channel8_IRQHandler
  .text.handle_reset
-                0x000000000000cf3a       0x8a ./Startup/startup_ch32v20x_D6.o
-                0x000000000000cf3a                handle_reset
+                0x000000000000cfe0       0x8a ./Startup/startup_ch32v20x_D6.o
+                0x000000000000cfe0                handle_reset
  .text.EXTI_Init
-                0x000000000000cfc4       0x6e ./Peripheral/src/ch32v20x_exti.o
-                0x000000000000cfc4                EXTI_Init
+                0x000000000000d06a       0x6e ./Peripheral/src/ch32v20x_exti.o
+                0x000000000000d06a                EXTI_Init
  .text.EXTI_GetITStatus
-                0x000000000000d032       0x1e ./Peripheral/src/ch32v20x_exti.o
-                0x000000000000d032                EXTI_GetITStatus
+                0x000000000000d0d8       0x1e ./Peripheral/src/ch32v20x_exti.o
+                0x000000000000d0d8                EXTI_GetITStatus
  .text.EXTI_ClearITPendingBit
-                0x000000000000d050        0xa ./Peripheral/src/ch32v20x_exti.o
-                0x000000000000d050                EXTI_ClearITPendingBit
+                0x000000000000d0f6        0xa ./Peripheral/src/ch32v20x_exti.o
+                0x000000000000d0f6                EXTI_ClearITPendingBit
+ .text.GPIO_DeInit
+                0x000000000000d100       0x8e ./Peripheral/src/ch32v20x_gpio.o
+                0x000000000000d100                GPIO_DeInit
  .text.GPIO_Init
-                0x000000000000d05a      0x4ba ./Peripheral/src/ch32v20x_gpio.o
-                0x000000000000d05a                GPIO_Init
+                0x000000000000d18e      0x4ba ./Peripheral/src/ch32v20x_gpio.o
+                0x000000000000d18e                GPIO_Init
  .text.GPIO_ReadInputDataBit
-                0x000000000000d514       0x24 ./Peripheral/src/ch32v20x_gpio.o
-                0x000000000000d514                GPIO_ReadInputDataBit
+                0x000000000000d648       0x24 ./Peripheral/src/ch32v20x_gpio.o
+                0x000000000000d648                GPIO_ReadInputDataBit
  .text.GPIO_ReadOutputData
-                0x000000000000d538       0x20 ./Peripheral/src/ch32v20x_gpio.o
-                0x000000000000d538                GPIO_ReadOutputData
+                0x000000000000d66c       0x20 ./Peripheral/src/ch32v20x_gpio.o
+                0x000000000000d66c                GPIO_ReadOutputData
  .text.GPIO_WriteBit
-                0x000000000000d558       0x1c ./Peripheral/src/ch32v20x_gpio.o
-                0x000000000000d558                GPIO_WriteBit
+                0x000000000000d68c       0x1c ./Peripheral/src/ch32v20x_gpio.o
+                0x000000000000d68c                GPIO_WriteBit
  .text.GPIO_Write
-                0x000000000000d574       0x18 ./Peripheral/src/ch32v20x_gpio.o
-                0x000000000000d574                GPIO_Write
+                0x000000000000d6a8       0x18 ./Peripheral/src/ch32v20x_gpio.o
+                0x000000000000d6a8                GPIO_Write
  .text.GPIO_EXTILineConfig
-                0x000000000000d58c       0x2a ./Peripheral/src/ch32v20x_gpio.o
-                0x000000000000d58c                GPIO_EXTILineConfig
+                0x000000000000d6c0       0x2a ./Peripheral/src/ch32v20x_gpio.o
+                0x000000000000d6c0                GPIO_EXTILineConfig
+ .text.IWDG_WriteAccessCmd
+                0x000000000000d6ea        0x8 ./Peripheral/src/ch32v20x_iwdg.o
+                0x000000000000d6ea                IWDG_WriteAccessCmd
+ .text.IWDG_SetPrescaler
+                0x000000000000d6f2        0x8 ./Peripheral/src/ch32v20x_iwdg.o
+                0x000000000000d6f2                IWDG_SetPrescaler
+ .text.IWDG_SetReload
+                0x000000000000d6fa        0x8 ./Peripheral/src/ch32v20x_iwdg.o
+                0x000000000000d6fa                IWDG_SetReload
+ .text.IWDG_ReloadCounter
+                0x000000000000d702        0xe ./Peripheral/src/ch32v20x_iwdg.o
+                0x000000000000d702                IWDG_ReloadCounter
+ .text.IWDG_Enable
+                0x000000000000d710        0xe ./Peripheral/src/ch32v20x_iwdg.o
+                0x000000000000d710                IWDG_Enable
  .text.NVIC_Init
-                0x000000000000d5b6       0xe6 ./Peripheral/src/ch32v20x_misc.o
-                0x000000000000d5b6                NVIC_Init
+                0x000000000000d71e       0xe6 ./Peripheral/src/ch32v20x_misc.o
+                0x000000000000d71e                NVIC_Init
  .text.RCC_USBCLKConfig
-                0x000000000000d69c       0x1a ./Peripheral/src/ch32v20x_rcc.o
-                0x000000000000d69c                RCC_USBCLKConfig
+                0x000000000000d804       0x1a ./Peripheral/src/ch32v20x_rcc.o
+                0x000000000000d804                RCC_USBCLKConfig
  .text.RCC_AHBPeriphClockCmd
-                0x000000000000d6b6       0x1e ./Peripheral/src/ch32v20x_rcc.o
-                0x000000000000d6b6                RCC_AHBPeriphClockCmd
+                0x000000000000d81e       0x1e ./Peripheral/src/ch32v20x_rcc.o
+                0x000000000000d81e                RCC_AHBPeriphClockCmd
  .text.RCC_APB2PeriphClockCmd
-                0x000000000000d6d4       0x1e ./Peripheral/src/ch32v20x_rcc.o
-                0x000000000000d6d4                RCC_APB2PeriphClockCmd
+                0x000000000000d83c       0x1e ./Peripheral/src/ch32v20x_rcc.o
+                0x000000000000d83c                RCC_APB2PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x000000000000d6f2       0x1e ./Peripheral/src/ch32v20x_rcc.o
-                0x000000000000d6f2                RCC_APB1PeriphClockCmd
+                0x000000000000d85a       0x1e ./Peripheral/src/ch32v20x_rcc.o
+                0x000000000000d85a                RCC_APB1PeriphClockCmd
+ .text.RCC_APB2PeriphResetCmd
+                0x000000000000d878       0x1e ./Peripheral/src/ch32v20x_rcc.o
+                0x000000000000d878                RCC_APB2PeriphResetCmd
  .text.TIM_TimeBaseInit
-                0x000000000000d710       0x94 ./Peripheral/src/ch32v20x_tim.o
-                0x000000000000d710                TIM_TimeBaseInit
- .text.TIM_Cmd  0x000000000000d7a4       0x20 ./Peripheral/src/ch32v20x_tim.o
-                0x000000000000d7a4                TIM_Cmd
+                0x000000000000d896       0x94 ./Peripheral/src/ch32v20x_tim.o
+                0x000000000000d896                TIM_TimeBaseInit
+ .text.TIM_Cmd  0x000000000000d92a       0x20 ./Peripheral/src/ch32v20x_tim.o
+                0x000000000000d92a                TIM_Cmd
  .text.TIM_ITConfig
-                0x000000000000d7c4       0x1a ./Peripheral/src/ch32v20x_tim.o
-                0x000000000000d7c4                TIM_ITConfig
+                0x000000000000d94a       0x1a ./Peripheral/src/ch32v20x_tim.o
+                0x000000000000d94a                TIM_ITConfig
  .text.TIM_GetITStatus
-                0x000000000000d7de       0x1c ./Peripheral/src/ch32v20x_tim.o
-                0x000000000000d7de                TIM_GetITStatus
+                0x000000000000d964       0x1c ./Peripheral/src/ch32v20x_tim.o
+                0x000000000000d964                TIM_GetITStatus
  .text.TIM_ClearITPendingBit
-                0x000000000000d7fa        0xe ./Peripheral/src/ch32v20x_tim.o
-                0x000000000000d7fa                TIM_ClearITPendingBit
+                0x000000000000d980        0xe ./Peripheral/src/ch32v20x_tim.o
+                0x000000000000d980                TIM_ClearITPendingBit
  .text.Delay_Init
-                0x000000000000d808       0x2a ./Debug/debug.o
-                0x000000000000d808                Delay_Init
+                0x000000000000d98e       0x2a ./Debug/debug.o
+                0x000000000000d98e                Delay_Init
  .text.Delay_Us
-                0x000000000000d832       0x3a ./Debug/debug.o
-                0x000000000000d832                Delay_Us
+                0x000000000000d9b8       0x3a ./Debug/debug.o
+                0x000000000000d9b8                Delay_Us
  .text.Delay_Ms
-                0x000000000000d86c       0x3a ./Debug/debug.o
-                0x000000000000d86c                Delay_Ms
- .text.memchr   0x000000000000d8a6       0x1a c:/mounriver/mounriver_studio/toolchain/risc-v embedded gcc/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32\libg_nano.a(lib_a-memchr.o)
-                0x000000000000d8a6                memchr
- .text.memcpy   0x000000000000d8c0       0xb6 c:/mounriver/mounriver_studio/toolchain/risc-v embedded gcc/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32\libg_nano.a(lib_a-memcpy.o)
-                0x000000000000d8c0                memcpy
+                0x000000000000d9f2       0x3a ./Debug/debug.o
+                0x000000000000d9f2                Delay_Ms
+ .text.memchr   0x000000000000da2c       0x1a c:/mounriver/mounriver_studio/toolchain/risc-v embedded gcc/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32\libg_nano.a(lib_a-memchr.o)
+                0x000000000000da2c                memchr
+ .text.memcpy   0x000000000000da46       0xb6 c:/mounriver/mounriver_studio/toolchain/risc-v embedded gcc/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32\libg_nano.a(lib_a-memcpy.o)
+                0x000000000000da46                memcpy
  *(.rodata)
  *(.rodata*)
- *fill*         0x000000000000d976        0x2 
+ *fill*         0x000000000000dafc        0x0 
  .rodata.parse_report_descriptor
-                0x000000000000d978       0x3c ./User/USB_Host/usb_hid_reportparser.o
+                0x000000000000dafc       0x3c ./User/USB_Host/usb_hid_reportparser.o
  .rodata.scancodeamiga
-                0x000000000000d9b4       0xe4 ./User/keyboard.o
+                0x000000000000db38       0xe4 ./User/keyboard.o
  *(.gnu.linkonce.t.*)
-                0x000000000000da98                . = ALIGN (0x4)
+                0x000000000000dc1c                . = ALIGN (0x4)
 
-.rela.dyn       0x000000000000da98        0x0
+.rela.dyn       0x000000000000dc1c        0x0
  .rela.text.TIM3_IRQHandler
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBH_EnumRootDevice
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.KM_AnalyzeConfigDesc
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.KM_AnalyzeHidReportDesc
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBH_EnumHidDevice
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.HUB_AnalyzeConfigDesc
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBH_EnumHubDevice
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.HUB_Port_PreEnum2
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBH_EnumHubPortDevice
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.KB_AnalyzeKeyValue
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBH_MainDeal
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBFS_Host_Init
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBFSH_CtrlTransfer.part.1
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBFSH_GetDeviceDescr
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBFSH_GetConfigDescr
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBFSH_GetStrDescr
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBFSH_SetUsbAddress
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBFSH_SetUsbConfig
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBFSH_ClearEndpStall
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBFSH_GetEndpData
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBFSH_SendEndpData
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.GetGamepadInfo
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.HID_GetHidDesr
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.HID_SetReport
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.HID_SetIdle
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.HUB_GetPortStatus
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.HUB_ClearPortFeature
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.HUB_SetPortFeature
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.HUB_GetClassDevDescr
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USBH_HID_GetKeyboardInfo
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.USB_GetMouseInfo
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.startup.main
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.InitMouse
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.ProcessMouse
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.ProcessScrollIRQ
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
- .rela.init     0x000000000000da98        0x0 ./User/USB_Host/app_km.o
- .rela.vector   0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
+ .rela.init     0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
+ .rela.vector   0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
  .rela.text.handle_reset
-                0x000000000000da98        0x0 ./User/USB_Host/app_km.o
+                0x000000000000dc1c        0x0 ./User/USB_Host/app_km.o
 
-.fini           0x000000000000da98        0x0
+.fini           0x000000000000dc1c        0x0
  *(SORT_NONE(.fini))
-                0x000000000000da98                . = ALIGN (0x4)
+                0x000000000000dc1c                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_etext = .)
                 [!provide]                        PROVIDE (_eitcm = .)
 
-.preinit_array  0x000000000000da98        0x0
+.preinit_array  0x000000000000dc1c        0x0
                 [!provide]                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x000000000000da98        0x0
+.init_array     0x000000000000dc1c        0x0
                 [!provide]                        PROVIDE (__init_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
  *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
                 [!provide]                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x000000000000da98        0x0
+.fini_array     0x000000000000dc1c        0x0
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
  *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
@@ -1697,15 +1700,15 @@ END GROUP
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
 
-.dalign         0x0000000020000000        0x0 load address 0x000000000000da98
+.dalign         0x0000000020000000        0x0 load address 0x000000000000dc1c
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                PROVIDE (_data_vma = .)
 
-.dlalign        0x000000000000da98        0x0
-                0x000000000000da98                . = ALIGN (0x4)
-                0x000000000000da98                PROVIDE (_data_lma = .)
+.dlalign        0x000000000000dc1c        0x0
+                0x000000000000dc1c                . = ALIGN (0x4)
+                0x000000000000dc1c                PROVIDE (_data_lma = .)
 
-.data           0x0000000020000000       0x70 load address 0x000000000000da98
+.data           0x0000000020000000       0x70 load address 0x000000000000dc1c
  *(.gnu.linkonce.r.*)
  *(.data .data.*)
  *(.gnu.linkonce.d.*)
@@ -1761,7 +1764,7 @@ END GROUP
                 0x0000000020000070                . = ALIGN (0x4)
                 0x0000000020000070                PROVIDE (_edata = .)
 
-.bss            0x0000000020000070     0x1b34 load address 0x000000000000db08
+.bss            0x0000000020000070     0x1b34 load address 0x000000000000dc8c
                 0x0000000020000070                . = ALIGN (0x4)
                 0x0000000020000070                PROVIDE (_sbss = .)
  *(.sbss*)
@@ -1845,7 +1848,7 @@ END GROUP
                 0x0000000020005000                PROVIDE (_eusrstack = .)
 OUTPUT(RISKYKVMBoot.elf elf32-littleriscv)
 
-.debug_info     0x0000000000000000    0x1ebff
+.debug_info     0x0000000000000000    0x1f7ce
  .debug_info    0x0000000000000000     0x375b ./User/USB_Host/app_km.o
  .debug_info    0x000000000000375b     0x2418 ./User/USB_Host/ch32v20x_usbfs_host.o
  .debug_info    0x0000000000005b73     0x1451 ./User/USB_Host/usb_gamepad.o
@@ -1856,22 +1859,23 @@ OUTPUT(RISKYKVMBoot.elf elf32-littleriscv)
  .debug_info    0x000000000000b47b     0x13ba ./User/USB_Host/usb_mouse.o
  .debug_info    0x000000000000c835     0x10ea ./User/ch32v20x_it.o
  .debug_info    0x000000000000d91f     0x11d3 ./User/gamepad.o
- .debug_info    0x000000000000eaf2     0x1165 ./User/gpio.o
- .debug_info    0x000000000000fc57     0x1c1f ./User/keyboard.o
- .debug_info    0x0000000000011876     0x1663 ./User/main.o
- .debug_info    0x0000000000012ed9     0x1c75 ./User/mouse.o
- .debug_info    0x0000000000014b4e      0xb3b ./User/system_ch32v20x.o
- .debug_info    0x0000000000015689     0x19c4 ./User/tim.o
- .debug_info    0x000000000001704d      0x2c2 ./User/utils.o
- .debug_info    0x000000000001730f       0x22 ./Startup/startup_ch32v20x_D6.o
- .debug_info    0x0000000000017331      0xc0d ./Peripheral/src/ch32v20x_exti.o
- .debug_info    0x0000000000017f3e     0x114a ./Peripheral/src/ch32v20x_gpio.o
- .debug_info    0x0000000000019088      0xebd ./Peripheral/src/ch32v20x_misc.o
- .debug_info    0x0000000000019f45     0x12c4 ./Peripheral/src/ch32v20x_rcc.o
- .debug_info    0x000000000001b209     0x2d40 ./Peripheral/src/ch32v20x_tim.o
- .debug_info    0x000000000001df49      0xcb6 ./Debug/debug.o
+ .debug_info    0x000000000000eaf2     0x1186 ./User/gpio.o
+ .debug_info    0x000000000000fc78     0x1b1b ./User/keyboard.o
+ .debug_info    0x0000000000011793     0x176a ./User/main.o
+ .debug_info    0x0000000000012efd     0x1cef ./User/mouse.o
+ .debug_info    0x0000000000014bec      0xb3b ./User/system_ch32v20x.o
+ .debug_info    0x0000000000015727     0x1a41 ./User/tim.o
+ .debug_info    0x0000000000017168      0x2c2 ./User/utils.o
+ .debug_info    0x000000000001742a       0x22 ./Startup/startup_ch32v20x_D6.o
+ .debug_info    0x000000000001744c      0xc0d ./Peripheral/src/ch32v20x_exti.o
+ .debug_info    0x0000000000018059     0x114a ./Peripheral/src/ch32v20x_gpio.o
+ .debug_info    0x00000000000191a3      0xab4 ./Peripheral/src/ch32v20x_iwdg.o
+ .debug_info    0x0000000000019c57      0xebd ./Peripheral/src/ch32v20x_misc.o
+ .debug_info    0x000000000001ab14     0x12c4 ./Peripheral/src/ch32v20x_rcc.o
+ .debug_info    0x000000000001bdd8     0x2d40 ./Peripheral/src/ch32v20x_tim.o
+ .debug_info    0x000000000001eb18      0xcb6 ./Debug/debug.o
 
-.debug_abbrev   0x0000000000000000     0x4920
+.debug_abbrev   0x0000000000000000     0x4c4d
  .debug_abbrev  0x0000000000000000      0x5b2 ./User/USB_Host/app_km.o
  .debug_abbrev  0x00000000000005b2      0x4f9 ./User/USB_Host/ch32v20x_usbfs_host.o
  .debug_abbrev  0x0000000000000aab      0x373 ./User/USB_Host/usb_gamepad.o
@@ -1883,21 +1887,22 @@ OUTPUT(RISKYKVMBoot.elf elf32-littleriscv)
  .debug_abbrev  0x0000000000001c0b      0x2a1 ./User/ch32v20x_it.o
  .debug_abbrev  0x0000000000001eac      0x283 ./User/gamepad.o
  .debug_abbrev  0x000000000000212f      0x260 ./User/gpio.o
- .debug_abbrev  0x000000000000238f      0x41c ./User/keyboard.o
- .debug_abbrev  0x00000000000027ab      0x2b8 ./User/main.o
- .debug_abbrev  0x0000000000002a63      0x3b6 ./User/mouse.o
- .debug_abbrev  0x0000000000002e19      0x2b0 ./User/system_ch32v20x.o
- .debug_abbrev  0x00000000000030c9      0x32e ./User/tim.o
- .debug_abbrev  0x00000000000033f7      0x144 ./User/utils.o
- .debug_abbrev  0x000000000000353b       0x12 ./Startup/startup_ch32v20x_D6.o
- .debug_abbrev  0x000000000000354d      0x2da ./Peripheral/src/ch32v20x_exti.o
- .debug_abbrev  0x0000000000003827      0x342 ./Peripheral/src/ch32v20x_gpio.o
- .debug_abbrev  0x0000000000003b69      0x2f2 ./Peripheral/src/ch32v20x_misc.o
- .debug_abbrev  0x0000000000003e5b      0x3dd ./Peripheral/src/ch32v20x_rcc.o
- .debug_abbrev  0x0000000000004238      0x422 ./Peripheral/src/ch32v20x_tim.o
- .debug_abbrev  0x000000000000465a      0x2c6 ./Debug/debug.o
+ .debug_abbrev  0x000000000000238f      0x43d ./User/keyboard.o
+ .debug_abbrev  0x00000000000027cc      0x313 ./User/main.o
+ .debug_abbrev  0x0000000000002adf      0x3e5 ./User/mouse.o
+ .debug_abbrev  0x0000000000002ec4      0x2b0 ./User/system_ch32v20x.o
+ .debug_abbrev  0x0000000000003174      0x32e ./User/tim.o
+ .debug_abbrev  0x00000000000034a2      0x144 ./User/utils.o
+ .debug_abbrev  0x00000000000035e6       0x12 ./Startup/startup_ch32v20x_D6.o
+ .debug_abbrev  0x00000000000035f8      0x2da ./Peripheral/src/ch32v20x_exti.o
+ .debug_abbrev  0x00000000000038d2      0x342 ./Peripheral/src/ch32v20x_gpio.o
+ .debug_abbrev  0x0000000000003c14      0x282 ./Peripheral/src/ch32v20x_iwdg.o
+ .debug_abbrev  0x0000000000003e96      0x2f2 ./Peripheral/src/ch32v20x_misc.o
+ .debug_abbrev  0x0000000000004188      0x3dd ./Peripheral/src/ch32v20x_rcc.o
+ .debug_abbrev  0x0000000000004565      0x422 ./Peripheral/src/ch32v20x_tim.o
+ .debug_abbrev  0x0000000000004987      0x2c6 ./Debug/debug.o
 
-.debug_loc      0x0000000000000000     0xa922
+.debug_loc      0x0000000000000000     0xa964
  .debug_loc     0x0000000000000000     0x1aa8 ./User/USB_Host/app_km.o
  .debug_loc     0x0000000000001aa8      0xe74 ./User/USB_Host/ch32v20x_usbfs_host.o
  .debug_loc     0x000000000000291c      0xaec ./User/USB_Host/usb_gamepad.o
@@ -1907,20 +1912,21 @@ OUTPUT(RISKYKVMBoot.elf elf32-littleriscv)
  .debug_loc     0x00000000000044c3       0x90 ./User/USB_Host/usb_keyboard.o
  .debug_loc     0x0000000000004553      0x497 ./User/USB_Host/usb_mouse.o
  .debug_loc     0x00000000000049ea       0x37 ./User/gamepad.o
- .debug_loc     0x0000000000004a21      0xd9c ./User/keyboard.o
- .debug_loc     0x00000000000057bd      0x27a ./User/main.o
- .debug_loc     0x0000000000005a37      0x3c7 ./User/mouse.o
- .debug_loc     0x0000000000005dfe       0xdc ./User/system_ch32v20x.o
- .debug_loc     0x0000000000005eda       0x2a ./User/tim.o
- .debug_loc     0x0000000000005f04      0x397 ./User/utils.o
- .debug_loc     0x000000000000629b      0x16d ./Peripheral/src/ch32v20x_exti.o
- .debug_loc     0x0000000000006408     0x190c ./Peripheral/src/ch32v20x_gpio.o
- .debug_loc     0x0000000000007d14      0x140 ./Peripheral/src/ch32v20x_misc.o
- .debug_loc     0x0000000000007e54      0x99e ./Peripheral/src/ch32v20x_rcc.o
- .debug_loc     0x00000000000087f2     0x2097 ./Peripheral/src/ch32v20x_tim.o
- .debug_loc     0x000000000000a889       0x99 ./Debug/debug.o
+ .debug_loc     0x0000000000004a21      0xd34 ./User/keyboard.o
+ .debug_loc     0x0000000000005755      0x2bc ./User/main.o
+ .debug_loc     0x0000000000005a11      0x3c7 ./User/mouse.o
+ .debug_loc     0x0000000000005dd8       0xdc ./User/system_ch32v20x.o
+ .debug_loc     0x0000000000005eb4       0x2a ./User/tim.o
+ .debug_loc     0x0000000000005ede      0x397 ./User/utils.o
+ .debug_loc     0x0000000000006275      0x16d ./Peripheral/src/ch32v20x_exti.o
+ .debug_loc     0x00000000000063e2     0x190c ./Peripheral/src/ch32v20x_gpio.o
+ .debug_loc     0x0000000000007cee       0x68 ./Peripheral/src/ch32v20x_iwdg.o
+ .debug_loc     0x0000000000007d56      0x140 ./Peripheral/src/ch32v20x_misc.o
+ .debug_loc     0x0000000000007e96      0x99e ./Peripheral/src/ch32v20x_rcc.o
+ .debug_loc     0x0000000000008834     0x2097 ./Peripheral/src/ch32v20x_tim.o
+ .debug_loc     0x000000000000a8cb       0x99 ./Debug/debug.o
 
-.debug_aranges  0x0000000000000000      0x990
+.debug_aranges  0x0000000000000000      0x9e8
  .debug_aranges
                 0x0000000000000000       0xa0 ./User/USB_Host/app_km.o
  .debug_aranges
@@ -1946,31 +1952,33 @@ OUTPUT(RISKYKVMBoot.elf elf32-littleriscv)
  .debug_aranges
                 0x00000000000002c8       0x48 ./User/keyboard.o
  .debug_aranges
-                0x0000000000000310       0x20 ./User/main.o
+                0x0000000000000310       0x28 ./User/main.o
  .debug_aranges
-                0x0000000000000330       0x48 ./User/mouse.o
+                0x0000000000000338       0x48 ./User/mouse.o
  .debug_aranges
-                0x0000000000000378       0x28 ./User/system_ch32v20x.o
+                0x0000000000000380       0x28 ./User/system_ch32v20x.o
  .debug_aranges
-                0x00000000000003a0       0x38 ./User/tim.o
+                0x00000000000003a8       0x40 ./User/tim.o
  .debug_aranges
-                0x00000000000003d8       0x38 ./User/utils.o
+                0x00000000000003e8       0x38 ./User/utils.o
  .debug_aranges
-                0x0000000000000410       0x30 ./Startup/startup_ch32v20x_D6.o
+                0x0000000000000420       0x30 ./Startup/startup_ch32v20x_D6.o
  .debug_aranges
-                0x0000000000000440       0x50 ./Peripheral/src/ch32v20x_exti.o
+                0x0000000000000450       0x50 ./Peripheral/src/ch32v20x_exti.o
  .debug_aranges
-                0x0000000000000490       0xa8 ./Peripheral/src/ch32v20x_gpio.o
+                0x00000000000004a0       0xa8 ./Peripheral/src/ch32v20x_gpio.o
  .debug_aranges
-                0x0000000000000538       0x28 ./Peripheral/src/ch32v20x_misc.o
+                0x0000000000000548       0x48 ./Peripheral/src/ch32v20x_iwdg.o
  .debug_aranges
-                0x0000000000000560      0x128 ./Peripheral/src/ch32v20x_rcc.o
+                0x0000000000000590       0x28 ./Peripheral/src/ch32v20x_misc.o
  .debug_aranges
-                0x0000000000000688      0x2c0 ./Peripheral/src/ch32v20x_tim.o
+                0x00000000000005b8      0x128 ./Peripheral/src/ch32v20x_rcc.o
  .debug_aranges
-                0x0000000000000948       0x48 ./Debug/debug.o
+                0x00000000000006e0      0x2c0 ./Peripheral/src/ch32v20x_tim.o
+ .debug_aranges
+                0x00000000000009a0       0x48 ./Debug/debug.o
 
-.debug_ranges   0x0000000000000000     0x1480
+.debug_ranges   0x0000000000000000     0x1458
  .debug_ranges  0x0000000000000000      0x230 ./User/USB_Host/app_km.o
  .debug_ranges  0x0000000000000230      0x1c0 ./User/USB_Host/ch32v20x_usbfs_host.o
  .debug_ranges  0x00000000000003f0      0x138 ./User/USB_Host/usb_gamepad.o
@@ -1982,21 +1990,22 @@ OUTPUT(RISKYKVMBoot.elf elf32-littleriscv)
  .debug_ranges  0x00000000000008b8       0x20 ./User/ch32v20x_it.o
  .debug_ranges  0x00000000000008d8       0x10 ./User/gamepad.o
  .debug_ranges  0x00000000000008e8       0x10 ./User/gpio.o
- .debug_ranges  0x00000000000008f8      0x218 ./User/keyboard.o
- .debug_ranges  0x0000000000000b10      0x168 ./User/main.o
- .debug_ranges  0x0000000000000c78       0x90 ./User/mouse.o
- .debug_ranges  0x0000000000000d08       0x30 ./User/system_ch32v20x.o
- .debug_ranges  0x0000000000000d38       0x58 ./User/tim.o
- .debug_ranges  0x0000000000000d90       0x28 ./User/utils.o
- .debug_ranges  0x0000000000000db8       0x28 ./Startup/startup_ch32v20x_D6.o
- .debug_ranges  0x0000000000000de0       0x40 ./Peripheral/src/ch32v20x_exti.o
- .debug_ranges  0x0000000000000e20       0x98 ./Peripheral/src/ch32v20x_gpio.o
- .debug_ranges  0x0000000000000eb8       0x68 ./Peripheral/src/ch32v20x_misc.o
- .debug_ranges  0x0000000000000f20      0x168 ./Peripheral/src/ch32v20x_rcc.o
- .debug_ranges  0x0000000000001088      0x3c0 ./Peripheral/src/ch32v20x_tim.o
- .debug_ranges  0x0000000000001448       0x38 ./Debug/debug.o
+ .debug_ranges  0x00000000000008f8      0x1a8 ./User/keyboard.o
+ .debug_ranges  0x0000000000000aa0      0x170 ./User/main.o
+ .debug_ranges  0x0000000000000c10       0x90 ./User/mouse.o
+ .debug_ranges  0x0000000000000ca0       0x30 ./User/system_ch32v20x.o
+ .debug_ranges  0x0000000000000cd0       0x60 ./User/tim.o
+ .debug_ranges  0x0000000000000d30       0x28 ./User/utils.o
+ .debug_ranges  0x0000000000000d58       0x28 ./Startup/startup_ch32v20x_D6.o
+ .debug_ranges  0x0000000000000d80       0x40 ./Peripheral/src/ch32v20x_exti.o
+ .debug_ranges  0x0000000000000dc0       0x98 ./Peripheral/src/ch32v20x_gpio.o
+ .debug_ranges  0x0000000000000e58       0x38 ./Peripheral/src/ch32v20x_iwdg.o
+ .debug_ranges  0x0000000000000e90       0x68 ./Peripheral/src/ch32v20x_misc.o
+ .debug_ranges  0x0000000000000ef8      0x168 ./Peripheral/src/ch32v20x_rcc.o
+ .debug_ranges  0x0000000000001060      0x3c0 ./Peripheral/src/ch32v20x_tim.o
+ .debug_ranges  0x0000000000001420       0x38 ./Debug/debug.o
 
-.debug_line     0x0000000000000000    0x186d5
+.debug_line     0x0000000000000000    0x18be9
  .debug_line    0x0000000000000000     0x4500 ./User/USB_Host/app_km.o
  .debug_line    0x0000000000004500     0x1fce ./User/USB_Host/ch32v20x_usbfs_host.o
  .debug_line    0x00000000000064ce     0x137a ./User/USB_Host/usb_gamepad.o
@@ -2008,21 +2017,22 @@ OUTPUT(RISKYKVMBoot.elf elf32-littleriscv)
  .debug_line    0x000000000000a147      0x39d ./User/ch32v20x_it.o
  .debug_line    0x000000000000a4e4      0x41c ./User/gamepad.o
  .debug_line    0x000000000000a900      0x7e0 ./User/gpio.o
- .debug_line    0x000000000000b0e0     0x1a0b ./User/keyboard.o
- .debug_line    0x000000000000caeb      0xa44 ./User/main.o
- .debug_line    0x000000000000d52f     0x1451 ./User/mouse.o
- .debug_line    0x000000000000e980      0x586 ./User/system_ch32v20x.o
- .debug_line    0x000000000000ef06      0x638 ./User/tim.o
- .debug_line    0x000000000000f53e      0x73e ./User/utils.o
- .debug_line    0x000000000000fc7c      0x280 ./Startup/startup_ch32v20x_D6.o
- .debug_line    0x000000000000fefc      0x5d5 ./Peripheral/src/ch32v20x_exti.o
- .debug_line    0x00000000000104d1     0x275e ./Peripheral/src/ch32v20x_gpio.o
- .debug_line    0x0000000000012c2f      0x558 ./Peripheral/src/ch32v20x_misc.o
- .debug_line    0x0000000000013187     0x12ea ./Peripheral/src/ch32v20x_rcc.o
- .debug_line    0x0000000000014471     0x3cbb ./Peripheral/src/ch32v20x_tim.o
- .debug_line    0x000000000001812c      0x5a9 ./Debug/debug.o
+ .debug_line    0x000000000000b0e0     0x196c ./User/keyboard.o
+ .debug_line    0x000000000000ca4c      0xb09 ./User/main.o
+ .debug_line    0x000000000000d555     0x1506 ./User/mouse.o
+ .debug_line    0x000000000000ea5b      0x586 ./User/system_ch32v20x.o
+ .debug_line    0x000000000000efe1      0x6d1 ./User/tim.o
+ .debug_line    0x000000000000f6b2      0x73e ./User/utils.o
+ .debug_line    0x000000000000fdf0      0x280 ./Startup/startup_ch32v20x_D6.o
+ .debug_line    0x0000000000010070      0x5d5 ./Peripheral/src/ch32v20x_exti.o
+ .debug_line    0x0000000000010645     0x275e ./Peripheral/src/ch32v20x_gpio.o
+ .debug_line    0x0000000000012da3      0x3a0 ./Peripheral/src/ch32v20x_iwdg.o
+ .debug_line    0x0000000000013143      0x558 ./Peripheral/src/ch32v20x_misc.o
+ .debug_line    0x000000000001369b     0x12ea ./Peripheral/src/ch32v20x_rcc.o
+ .debug_line    0x0000000000014985     0x3cbb ./Peripheral/src/ch32v20x_tim.o
+ .debug_line    0x0000000000018640      0x5a9 ./Debug/debug.o
 
-.debug_str      0x0000000000000000     0x3a94
+.debug_str      0x0000000000000000     0x3ba3
  .debug_str     0x0000000000000000     0x17e3 ./User/USB_Host/app_km.o
                                        0x1955 (size before relaxing)
  .debug_str     0x00000000000017e3      0x1d5 ./User/USB_Host/ch32v20x_usbfs_host.o
@@ -2043,33 +2053,35 @@ OUTPUT(RISKYKVMBoot.elf elf32-littleriscv)
                                         0x9e5 (size before relaxing)
  .debug_str     0x0000000000001efe       0x49 ./User/gamepad.o
                                         0xa0a (size before relaxing)
- .debug_str     0x0000000000001f47      0x274 ./User/gpio.o
-                                        0xbf9 (size before relaxing)
- .debug_str     0x00000000000021bb      0x1fd ./User/keyboard.o
+ .debug_str     0x0000000000001f47      0x280 ./User/gpio.o
                                         0xc05 (size before relaxing)
- .debug_str     0x00000000000023b8       0x83 ./User/main.o
-                                        0xb56 (size before relaxing)
- .debug_str     0x000000000000243b      0x1aa ./User/mouse.o
-                                        0xd20 (size before relaxing)
- .debug_str     0x00000000000025e5      0x114 ./User/system_ch32v20x.o
+ .debug_str     0x00000000000021c7      0x1fd ./User/keyboard.o
+                                        0xbfb (size before relaxing)
+ .debug_str     0x00000000000023c4       0xf5 ./User/main.o
+                                        0xbc8 (size before relaxing)
+ .debug_str     0x00000000000024b9      0x1aa ./User/mouse.o
+                                        0xd37 (size before relaxing)
+ .debug_str     0x0000000000002663      0x114 ./User/system_ch32v20x.o
                                         0x6b4 (size before relaxing)
- .debug_str     0x00000000000026f9       0x4f ./User/tim.o
-                                       0x100b (size before relaxing)
- .debug_str     0x0000000000002748       0x46 ./User/utils.o
+ .debug_str     0x0000000000002777       0x4f ./User/tim.o
+                                       0x102c (size before relaxing)
+ .debug_str     0x00000000000027c6       0x46 ./User/utils.o
                                         0x251 (size before relaxing)
- .debug_str     0x000000000000278e       0x4e ./Startup/startup_ch32v20x_D6.o
+ .debug_str     0x000000000000280c       0x4e ./Startup/startup_ch32v20x_D6.o
                                          0x85 (size before relaxing)
- .debug_str     0x00000000000027dc       0xe7 ./Peripheral/src/ch32v20x_exti.o
+ .debug_str     0x000000000000285a       0xe7 ./Peripheral/src/ch32v20x_exti.o
                                         0x7a1 (size before relaxing)
- .debug_str     0x00000000000028c3      0x21c ./Peripheral/src/ch32v20x_gpio.o
+ .debug_str     0x0000000000002941      0x210 ./Peripheral/src/ch32v20x_gpio.o
                                         0x991 (size before relaxing)
- .debug_str     0x0000000000002adf       0xc4 ./Peripheral/src/ch32v20x_misc.o
+ .debug_str     0x0000000000002b51       0x9d ./Peripheral/src/ch32v20x_iwdg.o
+                                        0x6b3 (size before relaxing)
+ .debug_str     0x0000000000002bee       0xc4 ./Peripheral/src/ch32v20x_misc.o
                                         0xa99 (size before relaxing)
- .debug_str     0x0000000000002ba3      0x3c1 ./Peripheral/src/ch32v20x_rcc.o
+ .debug_str     0x0000000000002cb2      0x3c1 ./Peripheral/src/ch32v20x_rcc.o
                                         0xad0 (size before relaxing)
- .debug_str     0x0000000000002f64      0xa14 ./Peripheral/src/ch32v20x_tim.o
+ .debug_str     0x0000000000003073      0xa14 ./Peripheral/src/ch32v20x_tim.o
                                        0x128f (size before relaxing)
- .debug_str     0x0000000000003978      0x11c ./Debug/debug.o
+ .debug_str     0x0000000000003a87      0x11c ./Debug/debug.o
                                         0x805 (size before relaxing)
 
 .comment        0x0000000000000000       0x33
@@ -2093,12 +2105,13 @@ OUTPUT(RISKYKVMBoot.elf elf32-littleriscv)
  .comment       0x0000000000000033       0x34 ./User/utils.o
  .comment       0x0000000000000033       0x34 ./Peripheral/src/ch32v20x_exti.o
  .comment       0x0000000000000033       0x34 ./Peripheral/src/ch32v20x_gpio.o
+ .comment       0x0000000000000033       0x34 ./Peripheral/src/ch32v20x_iwdg.o
  .comment       0x0000000000000033       0x34 ./Peripheral/src/ch32v20x_misc.o
  .comment       0x0000000000000033       0x34 ./Peripheral/src/ch32v20x_rcc.o
  .comment       0x0000000000000033       0x34 ./Peripheral/src/ch32v20x_tim.o
  .comment       0x0000000000000033       0x34 ./Debug/debug.o
 
-.debug_frame    0x0000000000000000     0x1964
+.debug_frame    0x0000000000000000     0x1a04
  .debug_frame   0x0000000000000000      0x3f0 ./User/USB_Host/app_km.o
  .debug_frame   0x00000000000003f0      0x384 ./User/USB_Host/ch32v20x_usbfs_host.o
  .debug_frame   0x0000000000000774       0x80 ./User/USB_Host/usb_gamepad.o
@@ -2110,17 +2123,18 @@ OUTPUT(RISKYKVMBoot.elf elf32-littleriscv)
  .debug_frame   0x0000000000000a3c       0x40 ./User/ch32v20x_it.o
  .debug_frame   0x0000000000000a7c       0x34 ./User/gamepad.o
  .debug_frame   0x0000000000000ab0       0x4c ./User/gpio.o
- .debug_frame   0x0000000000000afc      0x134 ./User/keyboard.o
- .debug_frame   0x0000000000000c30       0x40 ./User/main.o
- .debug_frame   0x0000000000000c70      0x11c ./User/mouse.o
- .debug_frame   0x0000000000000d8c       0x30 ./User/system_ch32v20x.o
- .debug_frame   0x0000000000000dbc       0x80 ./User/tim.o
- .debug_frame   0x0000000000000e3c       0x50 ./User/utils.o
- .debug_frame   0x0000000000000e8c       0x90 ./Peripheral/src/ch32v20x_exti.o
- .debug_frame   0x0000000000000f1c      0x170 ./Peripheral/src/ch32v20x_gpio.o
- .debug_frame   0x000000000000108c       0x30 ./Peripheral/src/ch32v20x_misc.o
- .debug_frame   0x00000000000010bc      0x23c ./Peripheral/src/ch32v20x_rcc.o
- .debug_frame   0x00000000000012f8      0x5bc ./Peripheral/src/ch32v20x_tim.o
- .debug_frame   0x00000000000018b4       0x70 ./Debug/debug.o
- .debug_frame   0x0000000000001924       0x20 c:/mounriver/mounriver_studio/toolchain/risc-v embedded gcc/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32\libg_nano.a(lib_a-memchr.o)
- .debug_frame   0x0000000000001944       0x20 c:/mounriver/mounriver_studio/toolchain/risc-v embedded gcc/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32\libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x0000000000000afc      0x11c ./User/keyboard.o
+ .debug_frame   0x0000000000000c18       0x64 ./User/main.o
+ .debug_frame   0x0000000000000c7c      0x120 ./User/mouse.o
+ .debug_frame   0x0000000000000d9c       0x30 ./User/system_ch32v20x.o
+ .debug_frame   0x0000000000000dcc       0xa0 ./User/tim.o
+ .debug_frame   0x0000000000000e6c       0x50 ./User/utils.o
+ .debug_frame   0x0000000000000ebc       0x90 ./Peripheral/src/ch32v20x_exti.o
+ .debug_frame   0x0000000000000f4c      0x170 ./Peripheral/src/ch32v20x_gpio.o
+ .debug_frame   0x00000000000010bc       0x70 ./Peripheral/src/ch32v20x_iwdg.o
+ .debug_frame   0x000000000000112c       0x30 ./Peripheral/src/ch32v20x_misc.o
+ .debug_frame   0x000000000000115c      0x23c ./Peripheral/src/ch32v20x_rcc.o
+ .debug_frame   0x0000000000001398      0x5bc ./Peripheral/src/ch32v20x_tim.o
+ .debug_frame   0x0000000000001954       0x70 ./Debug/debug.o
+ .debug_frame   0x00000000000019c4       0x20 c:/mounriver/mounriver_studio/toolchain/risc-v embedded gcc/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32\libg_nano.a(lib_a-memchr.o)
+ .debug_frame   0x00000000000019e4       0x20 c:/mounriver/mounriver_studio/toolchain/risc-v embedded gcc/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32\libg_nano.a(lib_a-memcpy.o)

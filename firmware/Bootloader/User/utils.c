@@ -21,8 +21,6 @@ void InitStuff(void)
         RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
         RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
 
-
-
         GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
         GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
         GPIO_Init(GPIOA, &GPIO_InitStructure);
@@ -44,7 +42,7 @@ void InitStuff(void)
 
 void DeInitStuff(void)
 {
-    //GPIO_DeInit(GPIOA);
+    GPIO_DeInit(GPIOA);
     //GPIO_DeInit(GPIOC);
    // USBFS_Host_Init( DISABLE );
 
