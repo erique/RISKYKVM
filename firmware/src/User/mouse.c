@@ -329,6 +329,10 @@ void ProcessScrollIRQ()
     uint16_t PortCurrentValueGPIOA = GPIO_ReadOutputData(GPIOA);
     uint16_t PortCurrentValueGPIOB = GPIO_ReadOutputData(GPIOB);
 
+    TIM_Cmd( TIM1, DISABLE );
+
+
+
     FifoRead(&ScrollBuffer, &code, 1);
 
 
@@ -374,7 +378,11 @@ void ProcessScrollIRQ()
         GPIO_WriteBit(FV_GPIO_Port,FV_Pin, 0);
     }
 
-   while (GPIO_ReadInputDataBit(MB_GPIO_Port, MB_Pin) != 1);
+    TIM1->CNT = 0;
+    TIM_Cmd( TIM1, ENABLE );
+
+   while (  (GPIO_ReadInputDataBit(MB_GPIO_Port, MB_Pin) != 1) && (TIM1->CNT < 300) );
+   TIM_Cmd( TIM1, DISABLE );
    GPIO_Write(GPIOA,PortCurrentValueGPIOA);
    GPIO_Write(GPIOB,PortCurrentValueGPIOB);
 }

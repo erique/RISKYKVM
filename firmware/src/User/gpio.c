@@ -2,7 +2,10 @@
 
 void GPIO_Config()
 {
-    //RCC_APB2Periph_GPIOA
+
+    //Reset RCC
+    GPIO_DeInit(GPIOA);
+
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
@@ -22,6 +25,9 @@ void GPIO_Config()
     GPIO_WriteBit(KBD_DATA_GPIO_Port, KBD_DATA_Pin, Bit_SET);
     GPIO_WriteBit(KBD_CLOCK_GPIO_Port, KBD_CLOCK_Pin,Bit_SET);
     GPIO_WriteBit(KB_RESET_GPIO_Port,KB_RESET_GPIO_Pin,Bit_SET);
+
+    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_RESET);
+    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_RESET);
 
 
 
@@ -67,6 +73,7 @@ void GPIO_Config()
 
     GPIO_InitStructure.GPIO_Pin = KBD_CLOCK_Pin ;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
+    GPIO_InitStructure.GPIO_Mode =
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;;
     GPIO_Init(KBD_CLOCK_GPIO_Port, &GPIO_InitStructure);
 
@@ -79,6 +86,14 @@ void GPIO_Config()
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;;
     GPIO_Init(KB_RESET_GPIO_Port, &GPIO_InitStructure);
+
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
 
 
 

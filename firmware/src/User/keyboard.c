@@ -256,6 +256,7 @@ static HID_Keyboard_Data prevkeycode = {
 #define KEY_RIGHT_GUI                          0xE7
 
 #define KEYCODE_TAB_SIZE      0x72 /* da 0x00 a 0x6F */
+#define OK_RESET    3 /* 3 special keys to have a KBRESET */
 
 static const uint8_t scancodeamiga[KEYCODE_TAB_SIZE][2] =
 {
@@ -758,11 +759,10 @@ static led_status_t amikb_send(uint8_t keycode, int press)
 // **************************
 void amikb_reset(void)
 {
-    int8_t var;
-    for (var = 0; var < 10; ++var) {
-        GPIO_WriteBit(KB_RESET_GPIO_Port, KB_RESET_GPIO_Pin, Bit_RESET);
-    }
-
+    GPIO_WriteBit(KB_RESET_GPIO_Port, KB_RESET_GPIO_Pin, Bit_RESET);
+    GPIO_WriteBit(KBD_CLOCK_GPIO_Port, KBD_CLOCK_Pin, Bit_RESET);
+    Delay_Ms(500);
+    GPIO_WriteBit(KBD_CLOCK_GPIO_Port, KBD_CLOCK_Pin, Bit_SET);
     GPIO_WriteBit(KB_RESET_GPIO_Port, KB_RESET_GPIO_Pin, Bit_SET);
 
     prev_keycode = 0xff;
@@ -771,9 +771,15 @@ void amikb_reset(void)
 	scrolllk = 0;
 }
 
+void amikb_irq(void)
+{
+
+
+}
+
 // ****************************
 
-#define OK_RESET	3 /* 3 special keys to have a KBRESET */
+
 
 
 
@@ -788,12 +794,36 @@ void amikb_process(HID_Keyboard_Data *kbdata)
 	int j;
 	led_status_t rval = NO_LED; /* 0 means no USB interaction such as leds, ... */
 
+	if(kbdata->keys[0] == KEY_F12)
+	{
+	    GPIO_WriteBit(LED_GPIO_Port, LED_Pin, RESET);
+	    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_RESET);
+	    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_RESET);
+	    Delay_Ms(500);
+	    GPIO_WriteBit(GPIOA,GPIO_Pin_13,Bit_SET);
+	    GPIO_WriteBit(GPIOA,GPIO_Pin_14,Bit_SET);
+	    GPIO_WriteBit(LED_GPIO_Port, LED_Pin, SET);
+	    return;
+	}
 
 	//check for reset
 	if(kbdata->lctrl == 1 && kbdata->lalt ==1 &&kbdata->keys[0]==KEY_DELETE  )
 	{
 		amikb_reset();
+		return;
 	}
+
+    if(kbdata->lgui == 1 && kbdata->rgui ==1 &&kbdata->rctrl )
+    {
+        amikb_reset();
+        return;
+    }
+
+    if(kbdata->lgui == 1 && kbdata->rgui ==1 &&kbdata->lctrl )
+    {
+        amikb_reset();
+        return;
+    }
 
 	// ----------------------------------------------- LEFT
 
@@ -928,6 +958,3 @@ void amikb_process(HID_Keyboard_Data *kbdata)
 		}
 
 }
-
-
-

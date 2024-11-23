@@ -36,7 +36,7 @@ void amikb_gpio_init(void);
 void amikb_ready(int isready);
 bool amikb_reset_check(void);
 void amikb_reset(void);
-
+void amikb_irq(void);
 
 
 #endif

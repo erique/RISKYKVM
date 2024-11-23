@@ -1,3 +1,6 @@
 firmware/obj/*
 firmware/bin/*
-board/RISKYKVM-backups/** 
+board/RISKYKVM-backups/*
+firmware/RISKYKVM/obj/*
+firmware/Bootloader/obj/*
+firmware/RISKYKVMBootloader/obj/*
