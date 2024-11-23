@@ -819,7 +819,7 @@ void amikb_process(HID_Keyboard_Data *kbdata)
         return;
     }
 
-    if(kbdata->lgui == 1 && kbdata->rgui ==1 &&kbdata->lctrl )
+    if(kbdata->lctrl == 1 && kbdata->lgui ==1 &&kbdata->keys[0]==101  )
     {
         amikb_reset();
         return;
