@@ -5,3 +5,4 @@ firmware/RISKYKVM/obj/*
 firmware/Bootloader/obj/*
 firmware/RISKYKVMBootloader/obj/*
 bin/*
+**/build/**
